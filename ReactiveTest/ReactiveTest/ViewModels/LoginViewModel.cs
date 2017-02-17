@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using ReactiveUI;
@@ -16,12 +13,18 @@ namespace ReactiveTest.ViewModels
             var canLogin = this.WhenAnyValue(
                 x => x.Email,
                 x => x.Password,
-                (em, pa) => !string.IsNullOrWhiteSpace(em) && !string.IsNullOrWhiteSpace(pa) && EmailIsValid(em));
-            Login = ReactiveCommand.CreateFromTask(async () =>
+                (em, pa) => 
+                !string.IsNullOrWhiteSpace(em) && !string.IsNullOrWhiteSpace(pa) && EmailIsValid(em));
+            LoginCommand = ReactiveCommand.CreateFromTask(async () =>
             {
-                await Task.Delay(2000).ConfigureAwait(false);
+                await LoginAsync();
             }, canLogin);
-            Login.IsExecuting.ToProperty(this, x => x.IsLoading, out _isLoading);
+            LoginCommand.IsExecuting.ToProperty(this, x => x.IsLoading, out _isLoading);
+        }
+
+        private static async Task LoginAsync()
+        {
+            await Task.Delay(2000).ConfigureAwait(false);
         }
 
         private bool EmailIsValid(string email)
@@ -32,8 +35,7 @@ namespace ReactiveTest.ViewModels
                 RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
         }
 
-        //public  ReactiveCommand<System.Reactive.Unit> Login { get; protected set; }
-        public ReactiveCommand Login { get; protected set; }
+        public ReactiveCommand LoginCommand { get; }
 
         string _email;
         public string Email

@@ -18,9 +18,9 @@ namespace ReactiveTest.Views
             // We'll initialize our viewmodel
             ViewModel = new LoginViewModel();
             // We'll add the bindings
-          //  this.Bind(ViewModel, vm => vm.Email, v => v.Email.Text);
+            this.Bind(ViewModel, vm => vm.Email, v => v.Email.Text);
             this.Bind(ViewModel, vm => vm.Password, v => v.Password.Text);
-            this.BindCommand(ViewModel, vm => vm.Login, v => v.Login);
+            this.BindCommand(ViewModel, vm => vm.LoginCommand, v => v.Login);
             this.WhenAnyValue(x => x.ViewModel.IsLoading)
                 .ObserveOn(RxApp.MainThreadScheduler)
                 .Subscribe(busy =>
