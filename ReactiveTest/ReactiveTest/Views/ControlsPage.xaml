@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ReactiveTest.Controls;assembly=ReactiveTest"
+             x:Class="ReactiveTest.Views.ControlsPage">
+  <ContentPage.Content>
+    <StackLayout Padding="40">
+      <controls:CustomBoxView BorderColor="Blue" WidthRequest="200" HeightRequest="200"
+                              BindingContext="{x:Reference Name=ThicknessSlider}"     
+                              BorderThickness="{Binding Path=Value}">
+        
+      </controls:CustomBoxView>
+      <Label BindingContext="{x:Reference Name=ThicknessSlider}" FontSize="20" Text="{Binding Path=Value, StringFormat='Thickness: {0}'}"></Label>
+      <Slider x:Name="ThicknessSlider" Minimum="0" Maximum="100"></Slider>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

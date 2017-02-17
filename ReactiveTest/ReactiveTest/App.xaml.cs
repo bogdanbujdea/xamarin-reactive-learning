@@ -9,7 +9,7 @@ namespace ReactiveTest
         {
             InitializeComponent();
 
-            MainPage = new LoginPage();
+            MainPage = new ControlsPage();
         }
 
         protected override void OnStart()

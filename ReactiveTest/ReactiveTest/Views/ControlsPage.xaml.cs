@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
-namespace ReactiveTest
+namespace ReactiveTest.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class ControlsPage : ContentPage
     {
-        public MainPage()
+        public ControlsPage()
         {
             InitializeComponent();
         }

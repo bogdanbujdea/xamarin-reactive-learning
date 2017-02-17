@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Color = Android.Graphics.Color;
 
-[assembly:ExportRendererAttribute(typeof(ShadedButton), typeof(ShadedButtonRenderer))]
+[assembly:ExportRenderer(typeof(ShadedButton), typeof(ShadedButtonRenderer))]
 namespace ReactiveTest.Droid.Controls
 {
     public class ShadedButtonRenderer: ButtonRenderer
