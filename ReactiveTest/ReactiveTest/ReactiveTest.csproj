@@ -38,9 +38,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ColorFromRGBExtension.cs" />
     <Compile Include="Controls\CustomBoxView.cs" />
     <Compile Include="Controls\ShadedButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ControlaPageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\ControlsPage.xaml.cs">
       <DependentUpon>ControlsPage.xaml</DependentUpon>

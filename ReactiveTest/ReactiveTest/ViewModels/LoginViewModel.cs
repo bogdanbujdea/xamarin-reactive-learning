@@ -52,6 +52,7 @@ namespace ReactiveTest.ViewModels
         }
 
         readonly ObservableAsPropertyHelper<bool> _isLoading;
+
         public bool IsLoading
         {
             get { return _isLoading.Value; }
