@@ -1,4 +1,6 @@
-﻿using ReactiveTest.ViewModels;
+﻿using System;
+using System.Threading.Tasks;
+using ReactiveTest.ViewModels;
 using ReactiveUI;
 using Xamarin.Forms;
 
@@ -25,6 +27,13 @@ namespace ReactiveTest.Views
         {
             get { return ViewModel; }
             set { ViewModel = (TutorialPageViewModel)value; }
+        }
+
+        private async void Button_OnClicked(object sender, EventArgs e)
+        {
+            var controlsPage = new ControlsPage();
+            //var navigationPage = new NavigationPage(controlsPage);
+            await Navigation.PushAsync(controlsPage);
         }
     }
 }

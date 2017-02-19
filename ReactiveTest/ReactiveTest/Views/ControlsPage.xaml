@@ -12,18 +12,18 @@
       </controls:CustomBoxView>
       <Label BindingContext="{x:Reference Name=ThicknessSlider}" FontSize="20" Text="{Binding Path=Value, StringFormat='Thickness: {0}'}"></Label>
       <Slider x:Name="ThicknessSlider" Minimum="0" Maximum="100"></Slider>
-      <StackLayout Padding="20">
+      <StackLayout Padding="10">
         <StackLayout Orientation="Horizontal">
-          <Slider x:Name="RedSlider" Minimum="0" Maximum="255" WidthRequest="200"></Slider>
-          <Label BindingContext="{x:Reference Name=RedSlider}" FontSize="20" Text="{Binding Path=Value, StringFormat='Red: {0}'}"></Label>
+          <Slider x:Name="RedSlider" Minimum="0" Maximum="255" WidthRequest="150"></Slider>
+          <Label BindingContext="{x:Reference Name=RedSlider}" FontSize="16" Text="{Binding Path=Value, StringFormat='Red: {0}'}"></Label>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-          <Slider x:Name="GreenSlider" Minimum="0" Maximum="255" WidthRequest="200"></Slider>
-          <Label BindingContext="{x:Reference Name=GreenSlider}" FontSize="20" Text="{Binding Path=Value, StringFormat='Green: {0}'}"></Label>
+          <Slider x:Name="GreenSlider" Minimum="0" Maximum="255" WidthRequest="150"></Slider>
+          <Label BindingContext="{x:Reference Name=GreenSlider}" FontSize="16" Text="{Binding Path=Value, StringFormat='Green: {0}'}"></Label>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-          <Slider x:Name="BlueSlider" Minimum="0" Maximum="255" WidthRequest="200"></Slider>
-          <Label BindingContext="{x:Reference Name=BlueSlider}" FontSize="20" Text="{Binding Path=Value, StringFormat='Blue: {0}'}"></Label>
+          <Slider x:Name="BlueSlider" Minimum="0" Maximum="255" WidthRequest="150"></Slider>
+          <Label BindingContext="{x:Reference Name=BlueSlider}" FontSize="16" Text="{Binding Path=Value, StringFormat='Blue: {0}'}"></Label>
         </StackLayout>
         <Grid x:Name="ColoredGrid" WidthRequest="100" HeightRequest="100" 
               BackgroundColor="Red"></Grid>
