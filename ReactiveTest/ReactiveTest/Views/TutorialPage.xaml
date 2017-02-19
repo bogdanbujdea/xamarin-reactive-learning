@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+
+             x:Class="ReactiveTest.Views.TutorialPage">
+
+    <ContentView  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+      <forms:CarouselView x:Name="Tutorial" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <forms:CarouselView.ItemTemplate>
+          <DataTemplate>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition></RowDefinition>
+              <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Source="{Binding Image}"></Image>
+          <StackLayout Grid.Row="1" BackgroundColor="#80000000">
+            <Label Text="{Binding Description}" HorizontalOptions="Center"></Label>
+          </StackLayout>
+          </Grid>
+          
+          </DataTemplate>
+        </forms:CarouselView.ItemTemplate>
+      </forms:CarouselView>
+    </ContentView>
+
+</ContentPage>

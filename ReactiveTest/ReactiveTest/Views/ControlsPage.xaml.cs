@@ -6,12 +6,12 @@ using Xamarin.Forms;
 
 namespace ReactiveTest.Views
 {
-    public partial class ControlsPage : IViewFor<ControlaPageViewModel>
+    public partial class ControlsPage : IViewFor<ControlsPageViewModel>
     {
         public ControlsPage()
         {
             InitializeComponent();
-            ViewModel = new ControlaPageViewModel();
+            ViewModel = new ControlsPageViewModel();
             this.Bind(ViewModel, vm => vm.Red, v => v.RedSlider.Value);
             this.Bind(ViewModel, vm => vm.Blue, v => v.BlueSlider.Value);
             this.Bind(ViewModel, vm => vm.Green, v => v.GreenSlider.Value);
@@ -23,18 +23,18 @@ namespace ReactiveTest.Views
                 });
         }
 
-        public static readonly BindableProperty ViewModelProperty = BindableProperty.Create(nameof(ViewModel), typeof(ControlaPageViewModel), typeof(ControlsPage), null, BindingMode.OneWay);
+        public static readonly BindableProperty ViewModelProperty = BindableProperty.Create(nameof(ViewModel), typeof(ControlsPageViewModel), typeof(ControlsPage), null, BindingMode.OneWay);
 
-        public ControlaPageViewModel ViewModel
+        public ControlsPageViewModel ViewModel
         {
-            get { return (ControlaPageViewModel)GetValue(ViewModelProperty); }
+            get { return (ControlsPageViewModel)GetValue(ViewModelProperty); }
             set { SetValue(ViewModelProperty, value); }
         }
 
         object IViewFor.ViewModel
         {
             get { return ViewModel; }
-            set { ViewModel = (ControlaPageViewModel)value; }
+            set { ViewModel = (ControlsPageViewModel)value; }
         }
     }
 }

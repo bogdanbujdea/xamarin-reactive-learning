@@ -2,7 +2,7 @@
 
 namespace ReactiveTest.ViewModels
 {
-    public class ControlaPageViewModel: ReactiveObject
+    public class ControlsPageViewModel: ReactiveObject
     {
         private int _red;
         private int _blue;
